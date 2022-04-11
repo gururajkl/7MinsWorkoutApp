@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">7MinutesWorkout</string>
+    <string name="image">Main Image</string>
+    <string name="message">This will stop your workout. You\'ve come this far, are sure want to quit?</string>
+</resources>

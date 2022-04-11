@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".BMIActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarBMI"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white" />
+
+    <RadioGroup
+        android:id="@+id/rgUnits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarBMI"
+        android:layout_margin="10dp"
+        android:background="@drawable/radio_group_tab_background"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMetricUnits"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.50"
+            android:background="@drawable/units_tab_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="METRIC UNITS"
+            android:textColor="@drawable/unit_tab_text_color_selector"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+
+        <RadioButton
+            android:id="@+id/rbUSUnits"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.50"
+            android:background="@drawable/units_tab_selector"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:text="US UNITS"
+            android:textColor="@drawable/unit_tab_text_color_selector"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etWeight"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgUnits"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Weight (in kg)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        app:strokeColor="@color/color_accent" />
+
+    <EditText
+        android:id="@+id/etHeight"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etWeight"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Height in cm"
+        android:inputType="numberDecimal" />
+
+
+
+        <EditText
+            android:id="@+id/etFeet"
+            android:layout_width="500dp"
+            android:layout_below="@+id/etWeight"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="Feet"
+            android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etInch"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etFeet"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Inches"
+        android:inputType="numberDecimal"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:id="@+id/llDisplayBmiResult"
+        android:padding="10dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_below="@+id/etInch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvYourBMI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Your BMI"
+            android:textAllCaps="true"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvBMIValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="15.00"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvBMIType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Normal"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tvBMIDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Normal"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"/>
+        
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bmiBtnResult"
+        android:text="Calculate"
+        android:layout_below="@+id/llDisplayBmiResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
